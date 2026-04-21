@@ -46,9 +46,11 @@ app.get('/',(req:Request,res:Response)=>{
 const PORT =process.env.PORT ||5000
 const ConnectDB =async()=>{
     try{
-       await sequelize.sync({ alter: true });
-       await sequelize.sync();
-        console.log("Database connected successfully")
+       await sequelize.authenticate();
+console.log("Database connected successfully");
+
+await sequelize.sync({ alter: true });
+console.log("Tables created");
         app.listen(PORT,()=>{
             console.log(`Server is running on Port ${PORT}`)
         })
