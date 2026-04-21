@@ -28,6 +28,7 @@ class ProductController{
         const products = await ProductService.getAllProducts()
         res.json({ success: true, data: products })
     } catch (error) {
+           console.error("GET PRODUCTS ERROR:", error);
         next(error)
     }
  }
