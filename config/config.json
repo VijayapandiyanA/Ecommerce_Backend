@@ -1,7 +1,7 @@
 {
   
   "production": {
-    "url": "mysql://root:ZbNgfIqwOwrBqKsfNuiNySCodzCSUuQs@mysql.railway.internal:3306/railway",
+    "url": "mysql://root:ckMQRyJtPJODNGSEFkViOOIOVeMwcwwF@shinkansen.proxy.rlwy.net:12698/railway",
     "dialect": "mysql"
   }
 }
