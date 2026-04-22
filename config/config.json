@@ -1,6 +1,10 @@
 {
   "development": {
-    "url": "mysql://root:ZbNgfIqwOwrBqKsfNuiNySCodzCSUuQs@mysql.railway.internal:3306/railway",
+    "username": "root",
+    "password": "vijay",
+    "database": "shoe_store",
+    "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
@@ -8,6 +12,7 @@
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   },
   "production": {
