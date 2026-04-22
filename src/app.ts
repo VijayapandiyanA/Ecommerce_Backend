@@ -5,7 +5,7 @@ import cors from 'cors';
 import morgan from 'morgan'
 import stream from "./utils/morganStreams";
 import dotenv from 'dotenv';
-import { sequelize } from "./config/db";
+import sequelize from "./config/db";
 import userRoutes from './routes/UserRoutes'
 import productRoutes from './routes/ProductRoutes'
 import cartRoutes from './routes/CartRoutes'
@@ -43,7 +43,7 @@ app.get('/',(req:Request,res:Response)=>{
     res.json({ message: 'Welcome to the User API' })
 })
 
-const PORT =process.env.PORT ||5000
+
 const ConnectDB =async()=>{
     try{
        await sequelize.authenticate();
@@ -51,9 +51,11 @@ console.log("Database connected successfully");
 
 await sequelize.sync({ alter: true });
 console.log("Tables created");
-        app.listen(PORT,()=>{
-            console.log(`Server is running on Port ${PORT}`)
-        })
+        const PORT = Number(process.env.PORT) || 8080;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on ${PORT}`);
+});
     }
     catch(error){
         console.error("Unable to conect to the database :",error)

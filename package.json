@@ -6,7 +6,7 @@
   "scripts": {
      "dev": "nodemon --exec ts-node src/app.ts",
    "build": "node ./node_modules/typescript/bin/tsc",
-     "migrate": "sequelize-cli db:migrate",
+    "migrate": "sequelize-cli db:migrate --env production",
   "start": "node dist/app.js"
   },
   "keywords": [],
