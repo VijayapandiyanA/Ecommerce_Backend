@@ -3,7 +3,7 @@ import Product from "./product";
 import CartItem from "./cartitem";
 import Order from "./order";
 import OrderItem from "./orderitem";
-import { sequelize } from "../config/db";
+import  sequelize  from "../config/db";
 
 
 
