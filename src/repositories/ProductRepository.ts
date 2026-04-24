@@ -33,11 +33,16 @@ class ProductRepository{
          return await product.update(data)
     }
     
-    async deleteProduct(id:number){
-        const product = await Product.findByPk(id)
-        if(!product) throw new Error("Product not found")
-            await product.destroy()
-    }
+   async deleteProduct(id: number) {
+  const product = await Product.findByPk(id);
+
+  if (!product) {
+    return null;
+  }
+
+  await product.destroy();
+  return true;
+}
 
 }
 
